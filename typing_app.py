@@ -34,3 +34,25 @@ class TypingTestBase:
         self.typing_frame = None
 
         self.show_home_screen()
+
+    def show_home_screen(self):
+        self.home_screen_frame = tk.Frame(self.window, bg=self.color_background)
+        self.home_screen_frame.pack(fill="both", expand=True)
+
+        tk.Label(
+            self.home_screen_frame,
+            text="Welcome to the PUP Typing Speed Test!",
+            font=("Helvetica", 22, "bold"),
+            fg=self.color_text,
+            bg=self.color_background
+        ).pack(pady=40)
+
+        tk.Label(
+            self.home_screen_frame,
+            text="Press ENTER to start the game",
+            font=("Helvetica", 14),
+            fg=self.color_text,
+            bg=self.color_background
+        ).pack(pady=20)
+
+        self.window.bind("<Return>", self.start_game)
