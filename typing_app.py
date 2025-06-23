@@ -56,3 +56,8 @@ class TypingTestBase:
         ).pack(pady=20)
 
         self.window.bind("<Return>", self.start_game)
+
+    def start_game(self, event=None):
+        self.window.unbind("<Return>")
+        self.home_screen_frame.destroy()
+        self.setup_typing_ui()
