@@ -61,3 +61,55 @@ class TypingTestBase:
         self.window.unbind("<Return>")
         self.home_screen_frame.destroy()
         self.setup_typing_ui()
+
+    def setup_typing_ui(self):
+        self.typing_frame = tk.Frame(self.window, bg=self.color_background)
+        self.typing_frame.pack(fill="both", expand=True)
+
+        tk.Label(
+            self.typing_frame,
+            text="Typing Speed Test",
+            font=("Helvetica", 20, "bold"),
+            fg=self.color_text,
+            bg=self.color_background
+        ).pack(pady=10)
+
+        self.sentence_label = tk.Label(
+            self.typing_frame,
+            text=self.current_sentence,
+            wraplength=700,
+            font=("Helvetica", 14),
+            fg=self.color_text,
+            bg=self.color_background
+        )
+        self.sentence_label.pack(pady=10)
+
+        self.text_entry = tk.Entry(
+            self.typing_frame,
+            textvariable=self.input_text,
+            font=("Helvetica", 14),
+            width=90,
+            fg=self.color_background,
+            bg=self.color_text
+        )
+        self.text_entry.pack(pady=10)
+        self.text_entry.bind("<Return>", self.process_result)
+        self.text_entry.bind("<KeyPress>", self.start_timer_once)
+
+        self.result_display = tk.Label(
+            self.typing_frame,
+            text="",
+            font=("Helvetica", 12),
+            fg=self.color_text,
+            bg=self.color_background
+        )
+        self.result_display.pack(pady=10)
+
+        self.instruction_label = tk.Label(
+            self.typing_frame,
+            text="Click the field, type the sentence, then press ENTER.",
+            font=("Helvetica", 12, "italic"),
+            fg=self.color_text,
+            bg=self.color_background
+        )
+        self.instruction_label.pack(pady=5)
