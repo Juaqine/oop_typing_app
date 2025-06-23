@@ -10,3 +10,7 @@
 #Sentences are stored in a separate method.
 #Another class inherits the base one just to swap in the Cup of Joe lines.
 #Whole app runs inside a single window when the file is executed.
+
+import tkinter as tk
+import random
+import time
