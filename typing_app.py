@@ -32,3 +32,5 @@ class TypingTestBase:
 
         self.home_screen_frame = None
         self.typing_frame = None
+
+        self.show_home_screen()
