@@ -17,3 +17,18 @@ import time
 
 class TypingTestBase:
     def __init__(self, window):
+        self.window = window
+        self.window.title("Typing Speed Test")
+        self.window.geometry("800x400")
+
+        self.color_background = "#800000"
+        self.color_text = "#FFD700"
+        self.window.config(bg=self.color_background)
+
+        self.input_text = tk.StringVar()
+        self.start_time = None
+        self.typing_sentences = self.get_typing_sentences()
+        self.current_sentence = random.choice(self.typing_sentences)
+
+        self.home_screen_frame = None
+        self.typing_frame = None
