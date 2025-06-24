@@ -158,4 +158,13 @@ class TypingTestBase:
             if index < len(self.current_sentence) and character == self.current_sentence[index]:
                 correct_characters += 1
         accuracy_percentage = (correct_characters / len(self.current_sentence)) * 100
-        return round(accuracy_percentage, 2) 
+        return round(accuracy_percentage, 2)
+
+    def reset_test(self):
+        self.current_sentence = random.choice(self.get_typing_sentences())
+        self.sentence_label.config(text=self.current_sentence)
+        self.input_text.set("")
+        self.result_display.config(text="")
+        self.start_time = None
+        self.text_entry.config(state='normal')
+        self.text_entry.focus()
