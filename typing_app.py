@@ -171,3 +171,12 @@ class TypingTestBase:
 
     def get_typing_sentences(self):
         return ["Default sentence for typing test."]
+
+class TypingTest(TypingTestBase):
+    def get_typing_sentences(self):
+        return [
+            "Di pinapansin ingay sa tabi magulong kapaligiran sayo lang ang tingin.",
+            "Kung mananatili sayo minamahal kong estranghero.",
+            "Pasindi na ng ilaw minumulto na ko ng damdamin ko.",
+            "Hindi titigil hanggang ako na ang dahilan ng yong ngiting misteryoso."
+        ]
