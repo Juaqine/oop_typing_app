@@ -145,3 +145,9 @@ class TypingTestBase:
         self.result_display.config(text=result_text)
 
         self.text_entry.config(state='disabled')
+
+    def calculate_wpm(self, user_input, total_time_seconds):
+        words = user_input.strip().split()
+        word_count = len(words)
+        wpm = (word_count / total_time_seconds) * 60 if total_time_seconds > 0 else 0
+        return round(wpm, 2)
