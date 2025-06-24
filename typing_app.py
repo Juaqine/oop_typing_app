@@ -151,3 +151,11 @@ class TypingTestBase:
         word_count = len(words)
         wpm = (word_count / total_time_seconds) * 60 if total_time_seconds > 0 else 0
         return round(wpm, 2)
+
+    def calculate_accuracy(self, user_input):
+        correct_characters = 0
+        for index, character in enumerate(user_input):
+            if index < len(self.current_sentence) and character == self.current_sentence[index]:
+                correct_characters += 1
+        accuracy_percentage = (correct_characters / len(self.current_sentence)) * 100
+        return round(accuracy_percentage, 2) 
