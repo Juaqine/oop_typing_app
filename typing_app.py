@@ -180,3 +180,8 @@ class TypingTest(TypingTestBase):
             "Pasindi na ng ilaw minumulto na ko ng damdamin ko.",
             "Hindi titigil hanggang ako na ang dahilan ng yong ngiting misteryoso."
         ]
+
+if __name__ == "__main__":
+    root_window = tk.Tk()
+    typing_app = TypingTest(root_window)
+    root_window.mainloop()
