@@ -129,3 +129,19 @@ class TypingTestBase:
     def start_timer_once(self, event):
         if self.start_time is None:
             self.start_time = time.time()
+
+    def process_result(self, event):
+        if self.start_time is None:
+            return
+
+        end_time = time.time()
+        user_input = self.input_text.get()
+        total_time = end_time - self.start_time
+
+        words_per_minute = self.calculate_wpm(user_input, total_time)
+        typing_accuracy = self.calculate_accuracy(user_input)
+
+        result_text = f"Time: {round(total_time, 2)}s | WPM: {words_per_minute} | Accuracy: {typing_accuracy}%"
+        self.result_display.config(text=result_text)
+
+        self.text_entry.config(state='disabled')
