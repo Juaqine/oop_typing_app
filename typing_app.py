@@ -113,3 +113,15 @@ class TypingTestBase:
             bg=self.color_background
         )
         self.instruction_label.pack(pady=5)
+
+        self.restart_button = tk.Button(
+            self.typing_frame,
+            text="Restart",
+            command=self.reset_test,
+            font=("Helvetica", 12),
+            bg=self.color_text,
+            fg=self.color_background
+        )
+        self.restart_button.pack(pady=10)
+
+        self.text_entry.focus()
