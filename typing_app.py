@@ -168,3 +168,6 @@ class TypingTestBase:
         self.start_time = None
         self.text_entry.config(state='normal')
         self.text_entry.focus()
+
+    def get_typing_sentences(self):
+        return ["Default sentence for typing test."]
