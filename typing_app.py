@@ -125,3 +125,7 @@ class TypingTestBase:
         self.restart_button.pack(pady=10)
 
         self.text_entry.focus()
+
+    def start_timer_once(self, event):
+        if self.start_time is None:
+            self.start_time = time.time()
